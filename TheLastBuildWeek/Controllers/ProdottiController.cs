@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TheLastBuildWeek.Data;
 using TheLastBuildWeek.Models;
 
 namespace TheLastBuildWeek.Controllers
@@ -13,7 +12,7 @@ namespace TheLastBuildWeek.Controllers
     public class ProdottiController : Controller
 
     {
-        private TheLastBuildWeekContext db = new TheLastBuildWeekContext();
+        private ModelDBContext db = new ModelDBContext();   
 
         // GET: Prodotti
         public ActionResult Index()
