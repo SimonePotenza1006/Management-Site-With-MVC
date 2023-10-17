@@ -290,6 +290,7 @@
     <Content Include="Views\T_Ricovero\Details.cshtml" />
     <Content Include="Views\T_Ricovero\Edit.cshtml" />
     <Content Include="Views\T_Ricovero\Index.cshtml" />
+    <Content Include="Views\Home\Ricoveri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

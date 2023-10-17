@@ -57,5 +57,12 @@ namespace TheLastBuildWeek.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
+        [HttpGet]
+        public ActionResult Ricoveri (T_Ricovero ricovero)
+        {
+            return View(db.T_Ricovero.ToList());
+        }
     }
 }
