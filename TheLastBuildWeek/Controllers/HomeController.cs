@@ -89,6 +89,7 @@ namespace TheLastBuildWeek.Controllers
                     Foto = animale.FotoAnimale
                 });
             return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
+        }
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)
