@@ -164,6 +164,7 @@
     <Compile Include="Controllers\DittaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\VenditaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -282,6 +283,8 @@
     <Content Include="Views\Ditta\Index.cshtml" />
     <Content Include="Views\Ditta\Edit.cshtml" />
     <Content Include="Views\Ditta\delete.cshtml" />
+    <Content Include="Views\Vendita\Index.cshtml" />
+    <Content Include="Views\Prodotti\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,7 +19,7 @@ namespace TheLastBuildWeek.Controllers
         // GET: Prodotti
         public ActionResult Index()
         {
-            return View();
+            return View(db.T_Prodotti.ToList());
         }
 
         // Create
@@ -61,6 +63,46 @@ namespace TheLastBuildWeek.Controllers
             }
             return View(t_Prodotti);
         }
+
+        [HttpPost]
+
+        public ActionResult Details(int id)
+        {
+
+            T_Prodotti t_Prodotti = db.T_Prodotti.Find(id);
+            string connectionstring= ConfigurationManager.ConnectionStrings["ModelDBContext"].ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connectionstring);
+
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO  T_Vendita (FKIDcliente,FKIDprodotto,NumeroRicetta,DataVendita) VALUES(@FKIDcliente,@FKIDprodotto,@NumeroRicetta,@DataVendita)";
+                cmd.Parameters.AddWithValue("FKIDcliente", 1);
+                cmd.Parameters.AddWithValue("FKIDprodotto", t_Prodotti.IDProdotto);
+                cmd.Parameters.AddWithValue("NumeroRicetta","pippo");
+                cmd.Parameters.AddWithValue("DataVendita",DateTime.Now );
+              
+
+                int IsOk = cmd.ExecuteNonQuery();
+
+            }
+
+            catch { }
+            finally
+            {
+                conn.Close();
+            
+            }
+
+            return RedirectToAction("Index","Vendita");
+
+
+        }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
