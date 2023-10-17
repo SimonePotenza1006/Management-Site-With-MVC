@@ -9,7 +9,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Nome Animale</th>
+            <th id="IdAnimaleClick">Nome Animale</th>
             <th>Data Ricovero</th>
             <th>Descrzione Ricovero</th>
         </tr>
@@ -21,8 +21,32 @@
                 <td>@ricovero.FKIDAnimale</td>
                 <td>@ricovero.DataRicovero</td>
                 <td>@ricovero.DescrizioneRicovero</td>
-                
+                <td>@Html.ActionLink("Dettagli", "AnimaleView", new { id = ricovero.FKIDAnimale })</td>
+            </tr>
+            <tr id="#AnimaliView">
+
             </tr>
         }
     </tbody>
 </table>
+
+<div id="IdAnimaleClick">
+
+    DETTAGLI
+</div>
+
+@section scripts {
+
+    <script>
+
+        $(#partialZoneVisite).load("/Home/AnimaleView")
+
+        $(document).ready(function () {
+
+            $("#IdAnimaleClick").click(function () {
+                
+                $(".register").slideToggle();
+            })
+        })
+    </script>
+    }

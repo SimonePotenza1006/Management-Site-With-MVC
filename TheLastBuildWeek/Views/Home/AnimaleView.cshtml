@@ -1,0 +1,30 @@
+﻿@model List<TheLastBuildWeek.Models.T_Visita>
+
+@{
+    ViewBag.Title = "AnimaleView";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>ID Animale</th>
+            <th>Data Visita</th>
+            <th>Esame</th>
+            <th>Descrizione</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var visita in Model)
+        {
+            <tr>
+                <td>@visita.FKIDAnimale</td>
+                <td>@visita.DataVisita</td>
+                <td>@visita.Esame</td>
+                <td>@visita.Descrizione</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
