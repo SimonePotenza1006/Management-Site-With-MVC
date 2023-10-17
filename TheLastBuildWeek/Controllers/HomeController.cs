@@ -11,6 +11,17 @@ namespace TheLastBuildWeek.Controllers
     public class HomeController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
+
+        private class Animale
+        {
+            public int Id { get; set; }
+            public DateTime DataRegistrazione { get; set; }
+            public string Nome { get; set; }
+            public string Tipologia { get; set; }
+            public string CodiceMicrochip { get; set; }
+            public string Foto { get; set; }
+        }
+
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -58,6 +69,26 @@ namespace TheLastBuildWeek.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult InsertChipCode()
+        {
+            return View();
+        }
+
+        public ActionResult GetByChipCode(string code)
+        {
+            List<Animale> animaleList = new List<Animale>();
+
+            foreach (T_Animali animale in db.T_Animali.ToList())
+                animaleList.Add(new Animale
+                {
+                    Id = animale.IDAnimale,
+                    DataRegistrazione = animale.DataRegistrazione,
+                    Nome = animale.NomeAnimale,
+                    Tipologia = animale.Tipologia,
+                    CodiceMicrochip = animale.CodiceMicrochip,
+                    Foto = animale.FotoAnimale
+                });
+            return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)

@@ -261,6 +261,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ScriptSearchByMicrochip.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -289,6 +290,7 @@
     <Content Include="Views\Prodotti\Details.cshtml" />
     <Content Include="Views\Animali\EditAnimale.cshtml" />
     <Content Include="Views\Animali\CancelAnimal.cshtml" />
+    <Content Include="Views\Home\InsertChipCode.cshtml" />
     <Content Include="Views\T_Ricovero\Create.cshtml" />
     <Content Include="Views\T_Ricovero\Delete.cshtml" />
     <Content Include="Views\T_Ricovero\Details.cshtml" />
