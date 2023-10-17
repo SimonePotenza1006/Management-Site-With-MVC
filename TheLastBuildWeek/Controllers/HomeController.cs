@@ -57,5 +57,21 @@ namespace TheLastBuildWeek.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
+        [HttpGet]
+        public ActionResult Ricoveri (T_Ricovero ricovero)
+        {
+
+            //DA FARE: far vedere animali 
+            return View(db.T_Ricovero.ToList());
+        }
+
+        [HttpGet]
+        public ActionResult AnimaleView (T_Animali animale)
+        {
+            
+            return View(db.T_Animali.ToList());
+        }
     }
 }

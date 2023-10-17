@@ -20,10 +20,12 @@ namespace TheLastBuildWeek.Models
         public int IDAnimale { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name ="Data di registrazione")]
         public DateTime DataRegistrazione { get; set; }
 
         [Required]
         [StringLength(20)]
+        [Display(Name = "Nome dell'animale")]
         public string NomeAnimale { get; set; }
 
         [Required]
@@ -34,26 +36,32 @@ namespace TheLastBuildWeek.Models
         [StringLength(20)]
         public string Colore { get; set; }
 
+        [Display(Name = "Ha un Microchip?")]
         public bool HasMicrochip { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Codice del Microchip")]
         public string CodiceMicrochip { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Nome del proprietario")]
         public string NomeProprietario { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Cogome del proprietario")]
         public string CognomeProprietario { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Data di nascita dell'animale")]
         public DateTime DataNascita { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase Immagine { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Foto dell'animale")]
         public string FotoAnimale { get; set; }
-
+        [Display(Name = "É smarrito?")]
         public bool IsSmarrito { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

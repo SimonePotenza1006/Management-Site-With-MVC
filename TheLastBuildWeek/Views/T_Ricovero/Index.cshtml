@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TheLastBuildWeek.Models.T_Ricovero>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Animali.NomeAnimale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataRicovero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescrizioneRicovero)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Animali.NomeAnimale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRicovero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescrizioneRicovero)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDRicovero }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDRicovero }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDRicovero })
+        </td>
+    </tr>
+}
+
+</table>

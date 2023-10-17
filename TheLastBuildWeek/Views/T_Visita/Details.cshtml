@@ -1,0 +1,50 @@
+﻿@model TheLastBuildWeek.Models.T_Visita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_Visita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Animali.NomeAnimale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Animali.NomeAnimale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Esame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Esame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDVisita }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
