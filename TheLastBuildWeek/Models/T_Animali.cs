@@ -5,6 +5,7 @@ namespace TheLastBuildWeek.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     public partial class T_Animali
     {
@@ -46,6 +47,9 @@ namespace TheLastBuildWeek.Models
 
         [Column(TypeName = "date")]
         public DateTime DataNascita { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase Immagine { get; set; }
 
         [StringLength(100)]
         public string FotoAnimale { get; set; }
