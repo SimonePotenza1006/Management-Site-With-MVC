@@ -1,0 +1,42 @@
+﻿@model TheLastBuildWeek.Models.T_Ricovero
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_Ricovero</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Animali.NomeAnimale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Animali.NomeAnimale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRicovero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRicovero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescrizioneRicovero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescrizioneRicovero)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDRicovero }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
