@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace TheLastBuildWeek.Controllers
     public class ProdottiController : Controller
 
     {
-        private ModelDBContext db = new ModelDBContext();
+        private ModelDBContext db = new ModelDBContext();   
 
         // GET: Prodotti
         public ActionResult Index()
