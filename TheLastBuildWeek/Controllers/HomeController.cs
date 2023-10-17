@@ -68,10 +68,24 @@ namespace TheLastBuildWeek.Controllers
         }
 
         [HttpGet]
-        public ActionResult AnimaleView (T_Animali animale)
+        public ActionResult Visite()
         {
-            
-            return View(db.T_Animali.ToList());
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AnimaleView (T_Visita visita)
+        {
+            var animaleRicoverato = db.T_Animali.FirstOrDefault();
+            var idAnimaleRicoverato = db.T_Ricovero.FirstOrDefault();
+
+            if (animaleRicoverato.IDAnimale == idAnimaleRicoverato.FKIDAnimale)
+            {
+                return View(db.T_Visita.ToList());
+            }
+
+            return View();
         }
     }
 }
