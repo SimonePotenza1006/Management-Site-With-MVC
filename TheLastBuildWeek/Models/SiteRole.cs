@@ -39,9 +39,8 @@ namespace TheLastBuildWeek.Models
 
         public override string[] GetRolesForUser(string username)
         {
-
-             T_User user = db.T_User.FirstOrDefault(x => x.Username == username);
-
+            //Per lo studio veterinario il role sará "Veterinario", per la farmacia sará "Farmacista"
+            T_User user = db.T_User.FirstOrDefault(x => x.Username == username);
             List<string> roles = new List<string>();
             roles.Add(user.Role);
             return roles.ToArray();
