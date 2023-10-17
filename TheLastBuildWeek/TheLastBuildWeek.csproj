@@ -165,6 +165,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Controllers\VenditaController.cs" />
+    <Compile Include="Controllers\T_RicoveroController.cs" />
+    <Compile Include="Controllers\T_VisitaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,6 +287,19 @@
     <Content Include="Views\Ditta\delete.cshtml" />
     <Content Include="Views\Vendita\Index.cshtml" />
     <Content Include="Views\Prodotti\Details.cshtml" />
+    <Content Include="Views\Animali\EditAnimale.cshtml" />
+    <Content Include="Views\Animali\CancelAnimal.cshtml" />
+    <Content Include="Views\T_Ricovero\Create.cshtml" />
+    <Content Include="Views\T_Ricovero\Delete.cshtml" />
+    <Content Include="Views\T_Ricovero\Details.cshtml" />
+    <Content Include="Views\T_Ricovero\Edit.cshtml" />
+    <Content Include="Views\T_Ricovero\Index.cshtml" />
+    <Content Include="Views\Home\Ricoveri.cshtml" />
+    <Content Include="Views\T_Visita\Create.cshtml" />
+    <Content Include="Views\T_Visita\Delete.cshtml" />
+    <Content Include="Views\T_Visita\Details.cshtml" />
+    <Content Include="Views\T_Visita\Edit.cshtml" />
+    <Content Include="Views\T_Visita\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
