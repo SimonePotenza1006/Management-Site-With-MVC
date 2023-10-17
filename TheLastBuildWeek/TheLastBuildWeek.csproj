@@ -165,6 +165,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Controllers\T_RicoveroController.cs" />
+    <Compile Include="Controllers\T_VisitaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,6 +292,11 @@
     <Content Include="Views\T_Ricovero\Edit.cshtml" />
     <Content Include="Views\T_Ricovero\Index.cshtml" />
     <Content Include="Views\Home\Ricoveri.cshtml" />
+    <Content Include="Views\T_Visita\Create.cshtml" />
+    <Content Include="Views\T_Visita\Delete.cshtml" />
+    <Content Include="Views\T_Visita\Details.cshtml" />
+    <Content Include="Views\T_Visita\Edit.cshtml" />
+    <Content Include="Views\T_Visita\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
