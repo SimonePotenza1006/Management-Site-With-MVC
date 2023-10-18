@@ -106,7 +106,7 @@ namespace TheLastBuildWeek.Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult AnimaleView (T_Visita visita)
         {
             var animaleRicoverato = db.T_Animali.FirstOrDefault();

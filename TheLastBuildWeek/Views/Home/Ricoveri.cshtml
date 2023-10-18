@@ -21,7 +21,7 @@
                 <td>@ricovero.FKIDAnimale</td>
                 <td>@ricovero.DataRicovero</td>
                 <td>@ricovero.DescrizioneRicovero</td>
-                <td>@Html.ActionLink("Dettagli", "AnimaleView", new { id = ricovero.FKIDAnimale })</td>
+                <td><button id="showDetails">@Html.ActionLink("Dettagli", "AnimaleView", new { id = ricovero.FKIDAnimale })</button></td>
             </tr>
             <tr id="#AnimaliView">
 
@@ -39,14 +39,14 @@
 
     <script>
 
-        $(#partialZoneVisite).load("/Home/AnimaleView")
-
         $(document).ready(function () {
 
-            $("#IdAnimaleClick").click(function () {
-                
-                $(".register").slideToggle();
+            $("#showDetails").click(showDetails () {
+
+                $("#IdAnimaleClick").slideToggle("/Home/AnimaleView")
+
             })
         })
+
     </script>
     }
