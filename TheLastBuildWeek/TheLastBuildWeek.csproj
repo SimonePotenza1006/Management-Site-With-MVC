@@ -165,6 +165,7 @@
     <Compile Include="Controllers\FARMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\T_ClientiController.cs" />
     <Compile Include="Controllers\VenditaController.cs" />
     <Compile Include="Controllers\T_RicoveroController.cs" />
     <Compile Include="Controllers\T_VisitaController.cs" />
@@ -306,6 +307,11 @@
     <Content Include="Views\Home\AnimaleView.cshtml" />
     <Content Include="Views\FARM\Index.cshtml" />
     <Content Include="Views\Home\DetailVisita.cshtml" />
+    <Content Include="Views\T_Clienti\Create.cshtml" />
+    <Content Include="Views\T_Clienti\Delete.cshtml" />
+    <Content Include="Views\T_Clienti\Details.cshtml" />
+    <Content Include="Views\T_Clienti\Edit.cshtml" />
+    <Content Include="Views\T_Clienti\Index.cshtml" />
     <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
