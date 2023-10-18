@@ -162,6 +162,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AnimaliController.cs" />
     <Compile Include="Controllers\DittaController.cs" />
+    <Compile Include="Controllers\FARMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Controllers\VenditaController.cs" />
@@ -303,6 +304,7 @@
     <Content Include="Views\T_Visita\Edit.cshtml" />
     <Content Include="Views\T_Visita\Index.cshtml" />
     <Content Include="Views\Home\AnimaleView.cshtml" />
+    <Content Include="Views\FARM\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
