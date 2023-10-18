@@ -6,6 +6,7 @@
 
 <h2>Ricoveri</h2>
 
+@*      TABELLA DELLA LISTA RICOVERI      *@
 <table class="table">
     <thead>
         <tr>
@@ -22,7 +23,8 @@
                 <td>@ricovero.DataRicovero</td>
                 <td>@ricovero.DescrizioneRicovero</td>
                 <td><button id="showDetails">@Html.ActionLink("Dettagli", "DetailVisita", new { id = ricovero.FKIDAnimale })</button></td>
-            </tr> 
+            </tr>
+
         }
     </tbody>
 </table>
