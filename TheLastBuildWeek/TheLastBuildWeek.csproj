@@ -302,7 +302,7 @@
     <Content Include="Views\T_Visita\Details.cshtml" />
     <Content Include="Views\T_Visita\Edit.cshtml" />
     <Content Include="Views\T_Visita\Index.cshtml" />
-    <Content Include="Views\Home\AnimaleView.cshtml" />
+    <Content Include="Views\Home\DetailVisita.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
