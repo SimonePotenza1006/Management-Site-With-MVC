@@ -9,6 +9,13 @@ namespace TheLastBuildWeek.Controllers
 {
     public class VenditaController : Controller
     {
+        private class Vendita
+        {
+            public int Id { get; set; }
+            public DateTime DataVendita { get; set; }
+            
+
+        }
         private ModelDBContext db = new ModelDBContext();
 
         // GET: Vendita
@@ -46,6 +53,19 @@ namespace TheLastBuildWeek.Controllers
             }
 
             return View(vendita);
+        }
+        public ActionResult GetVenditeByDate(DateTime date)
+        {
+            List<Vendita> VenditeList = new List<Vendita>();
+            foreach(T_Vendita vendita in db.T_Vendita.ToList()) {
+                VenditeList.Add(new Vendita
+                {
+                    Id = vendita.IDVendita,
+                    DataVendita = vendita.DataVendita,
+                });
+                
+            }
+            return Json(VenditeList.Where(v => v.DataVendita == date), JsonRequestBehavior.AllowGet);
         }
 
     }
