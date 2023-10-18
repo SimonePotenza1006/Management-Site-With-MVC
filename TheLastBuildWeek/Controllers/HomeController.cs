@@ -20,6 +20,8 @@ namespace TheLastBuildWeek.Controllers
             public string Tipologia { get; set; }
             public string CodiceMicrochip { get; set; }
             public string Foto { get; set; }
+            public string NomeProprietario { get; set; }
+            public string CognomeProprietario { get; set; }
         }
 
         public ActionResult Index()
@@ -86,8 +88,10 @@ namespace TheLastBuildWeek.Controllers
                     Nome = animale.NomeAnimale,
                     Tipologia = animale.Tipologia,
                     CodiceMicrochip = animale.CodiceMicrochip,
-                    Foto = animale.FotoAnimale
-                });
+                    Foto = animale.FotoAnimale,
+                    NomeProprietario = animale.NomeProprietario,
+                    CognomeProprietario = animale.CognomeProprietario
+                }) ;
             return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
         }
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
