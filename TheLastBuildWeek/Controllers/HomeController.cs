@@ -12,6 +12,8 @@ namespace TheLastBuildWeek.Controllers
     {
         private ModelDBContext db = new ModelDBContext();
 
+
+        
         private class Animale
         {
             public int Id { get; set; }
@@ -81,25 +83,21 @@ namespace TheLastBuildWeek.Controllers
             List<Animale> animaleList = new List<Animale>();
 
             foreach (T_Animali animale in db.T_Animali.ToList())
+                
                 animaleList.Add(new Animale
                 {
                     Id = animale.IDAnimale,
-                    
                     DataRegistrazione = animale.DataRegistrazione,
                     Nome = animale.NomeAnimale,
                     Tipologia = animale.Tipologia,
                     CodiceMicrochip = animale.CodiceMicrochip,
                     Foto = animale.FotoAnimale,
                     NomeProprietario = animale.NomeProprietario,
-                    CognomeProprietario = animale.CognomeProprietario
+                    CognomeProprietario = animale.CognomeProprietario,
                 }) ;
-
+            
             return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
         }
-
-
-
-
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)
