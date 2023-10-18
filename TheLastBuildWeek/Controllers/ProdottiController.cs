@@ -68,9 +68,10 @@ namespace TheLastBuildWeek.Controllers
 
         public ActionResult Details(int id, string CodiceFiscale)
         {
-            ViewBag.CodFisc = db.T_Clienti.ToList();
-            var IdCliente = db.T_Clienti.Select(m => new {m.IDCliente}).FirstOrDefault();
-            int veroIdCliente = IdCliente.IDCliente;
+            
+            //var IdCliente = db.T_Clienti.Select(m => new {m.IDCliente}).FirstOrDefault();
+            //string veroIdCliente = db.T_Clienti.Select(c => c.CodiceFiscale == CodiceFiscale).FirstOrDefault();
+            int veroIdCliente = db.T_Clienti.Where(cl => cl.CodiceFiscale == CodiceFiscale).Select(cl => cl.IDCliente).FirstOrDefault();
            
             
             
