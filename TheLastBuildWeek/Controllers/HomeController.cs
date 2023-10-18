@@ -43,13 +43,13 @@ namespace TheLastBuildWeek.Controllers
         public ActionResult Login([Bind(Include = "Username, Password, Role")] T_User users)
         {
 
-            var user = db.T_User.FirstOrDefault(u => u.Username == users.Username && u.Password == users.Password && u.Role == "Veterinario");
+            var user = db.T_User.FirstOrDefault(u => u.Username == users.Username && u.Password == users.Password);
 
             if (user != null)
             {
 
                 FormsAuthentication.SetAuthCookie(users.Username, false);
-                return RedirectToAction("LoggedIn", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View();
@@ -61,14 +61,14 @@ namespace TheLastBuildWeek.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOut()
         {
 
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Home");
         }
 
         public ActionResult InsertChipCode()

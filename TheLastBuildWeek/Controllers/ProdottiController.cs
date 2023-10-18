@@ -66,21 +66,29 @@ namespace TheLastBuildWeek.Controllers
 
         [HttpPost]
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, string CodiceFiscale)
         {
-
+            ViewBag.CodFisc = db.T_Clienti.ToList();
+            var IdCliente = db.T_Clienti.Select(m => new {m.IDCliente}).FirstOrDefault();
+            int veroIdCliente = IdCliente.IDCliente;
+           
+            
+            
             T_Prodotti t_Prodotti = db.T_Prodotti.Find(id);
             string connectionstring= ConfigurationManager.ConnectionStrings["ModelDBContext"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionstring);
 
+            
+
 
             try
             {
+
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO  T_Vendita (FKIDcliente,FKIDprodotto,NumeroRicetta,DataVendita) VALUES(@FKIDcliente,@FKIDprodotto,@NumeroRicetta,@DataVendita)";
-                cmd.Parameters.AddWithValue("FKIDcliente", 1);
+                cmd.Parameters.AddWithValue("FKIDcliente", veroIdCliente );
                 cmd.Parameters.AddWithValue("FKIDprodotto", t_Prodotti.IDProdotto);
                 cmd.Parameters.AddWithValue("NumeroRicetta","pippo");
                 cmd.Parameters.AddWithValue("DataVendita",DateTime.Now );
