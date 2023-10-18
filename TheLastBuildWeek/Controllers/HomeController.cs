@@ -98,8 +98,15 @@ namespace TheLastBuildWeek.Controllers
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)
         {
+            var animaleNome = db.T_Animali.FirstOrDefault();
+            var foreignKeyAnimale = db.T_Ricovero.FirstOrDefault();
 
-            //DA FARE: far vedere animali 
+            if(foreignKeyAnimale == null)
+            {
+                return View(animaleNome);
+            }
+
+
             return View(db.T_Ricovero.ToList());
         }
 
@@ -110,8 +117,8 @@ namespace TheLastBuildWeek.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult AnimaleView (T_Visita visita)
+        [HttpGet]
+        public ActionResult DetailVisita (T_Visita visita)
         {
             var animaleRicoverato = db.T_Animali.FirstOrDefault();
             var idAnimaleRicoverato = db.T_Ricovero.FirstOrDefault();
