@@ -117,13 +117,6 @@ namespace TheLastBuildWeek.Controllers
         }
 
         [HttpGet]
-        public ActionResult Visite()
-        {
-            return View();
-        }
-
-
-        [HttpGet]
         public ActionResult DetailVisita (T_Visita visita)
         {
             var animaleRicoverato = db.T_Animali.FirstOrDefault();
@@ -135,6 +128,15 @@ namespace TheLastBuildWeek.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult AnimaliRicoverati(T_Animali animali)
+        {
+            var dettagliRicovero = db.T_Animali.Include("T_Ricovero").ToList();
+
+
+            return View(db.T_Animali.ToList());
         }
     }
 }

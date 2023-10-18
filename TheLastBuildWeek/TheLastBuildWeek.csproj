@@ -306,6 +306,7 @@
     <Content Include="Views\Home\AnimaleView.cshtml" />
     <Content Include="Views\FARM\Index.cshtml" />
     <Content Include="Views\Home\DetailVisita.cshtml" />
+    <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
