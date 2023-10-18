@@ -3,12 +3,12 @@
     ViewBag.Title = "InsertChipCode";
 }
 
-<h2>InsertChipCode</h2>
 
 
-<h2>Ricerca tramite codice Microchip</h2>
+<h2 class="text-center">Ricerca tramite codice Microchip</h2>
 
 
+<div id="result" class="d-flex justify-content-center mt-5">
 <input type="text" id="codeInput" dirname="codeBox" />
 <a id="SearchButton" class="btn btn-danger">Cerca</a>
 
@@ -24,6 +24,7 @@
 
             $("#SearchButton").click(function () {
                 var NewCode = $('#codeInput').val()
+                $("#result").empty()
 
                 $.ajax({
                     method: "GET",
@@ -32,13 +33,14 @@
                     success: function (data) {
                         console.log(data)
                         $.each(data, function (i, item) {
-                            let div = "<div>" +
-                                "<div> <img width='200px' height='230px' src='/Content/images/" + item.Foto +"'/> </div>" +
-                                "<div> <p>" + item.Tipologia + "</p></div>" +
-                                "<div> <p>" + item.CodiceMicrochip + "</p></div>" +
-                                "<div> <p>" + item.NomeProprietario + "</p></div>" +
-                                "<div> <p>" + item.CognomeProprietario + "</p></div>" +
-                                "</div>"
+                            let div = "<div class='card' style='width: 18rem;'>" +
+                                            "<img class='cart-img-top' src='/Content/images/" + item.Foto +"'/>" +
+                                            "<div class='card-body'>" +
+                                                "<h6 class='card-title'> Nome:" + item.Nome + "</h6>" +
+                                                "<p class='card-text'> Nome del Proprietario:" + item.NomeProprietario + "</p>" +
+                                                "<p class='card-text'> Cognome del Proprietario:" + item.CognomeProprietario + "</p>" +
+                                            "</div>" +
+                                      "</div>"
                                 $("#result").append(div)
                         })
                     }

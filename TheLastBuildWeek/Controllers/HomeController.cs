@@ -43,13 +43,13 @@ namespace TheLastBuildWeek.Controllers
         public ActionResult Login([Bind(Include = "Username, Password, Role")] T_User users)
         {
 
-            var user = db.T_User.FirstOrDefault(u => u.Username == users.Username && u.Password == users.Password && u.Role == "Veterinario");
+            var user = db.T_User.FirstOrDefault(u => u.Username == users.Username && u.Password == users.Password);
 
             if (user != null)
             {
 
                 FormsAuthentication.SetAuthCookie(users.Username, false);
-                return RedirectToAction("LoggedIn", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View();
@@ -61,14 +61,14 @@ namespace TheLastBuildWeek.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOut()
         {
 
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Home");
         }
 
         public ActionResult InsertChipCode()
@@ -84,6 +84,7 @@ namespace TheLastBuildWeek.Controllers
                 animaleList.Add(new Animale
                 {
                     Id = animale.IDAnimale,
+                    
                     DataRegistrazione = animale.DataRegistrazione,
                     Nome = animale.NomeAnimale,
                     Tipologia = animale.Tipologia,
@@ -92,8 +93,13 @@ namespace TheLastBuildWeek.Controllers
                     NomeProprietario = animale.NomeProprietario,
                     CognomeProprietario = animale.CognomeProprietario
                 }) ;
+
             return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
         }
+
+
+
+
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)
@@ -111,13 +117,6 @@ namespace TheLastBuildWeek.Controllers
         }
 
         [HttpGet]
-        public ActionResult Visite()
-        {
-            return View();
-        }
-
-
-        [HttpGet]
         public ActionResult DetailVisita (T_Visita visita)
         {
             var animaleRicoverato = db.T_Animali.FirstOrDefault();
@@ -129,6 +128,15 @@ namespace TheLastBuildWeek.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult AnimaliRicoverati(T_Animali animali)
+        {
+            var dettagliRicovero = db.T_Animali.Include("T_Ricovero").ToList();
+
+
+            return View(db.T_Animali.ToList());
         }
     }
 }

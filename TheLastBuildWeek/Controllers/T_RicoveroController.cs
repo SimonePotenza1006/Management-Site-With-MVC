@@ -130,9 +130,11 @@ namespace TheLastBuildWeek.Controllers
             }
             base.Dispose(disposing);
         }
-
+        /* VECCHIA INNER JOIN, SOLO NEL CASO SI USERA' PER NON CANCELLARE IL CODICE
+        
         private class animaliRicoverati
         {
+            
             public int ID { get; set; }
 
             public string nomeAnimale { get; set; }
@@ -144,18 +146,24 @@ namespace TheLastBuildWeek.Controllers
             public string nomeProprietario { get; set; }
 
             public string cognomeProprietario { get; set; }
+            
 
-
-        }
-        public ActionResult SomeAction(string id)
-        {
-            animaliRicoverati aricover = new animaliRicoverati();
-                 
-            SqlCommand sqlCommand = new SqlCommand("select * from T_Animali as A inner join T_Visite as V on A.IDAnimali = V.FKIDAnimale");
-
-
-
-            return View();
-        }
     }
+    public ActionResult AnimaliRicoverati(string id)
+        {
+           // animaliRicoverati aricover = new animaliRicoverati();
+
+            // SqlCommand sqlCommand = new SqlCommand("select * from T_Animali as A inner join T_Visite as V on A.IDAnimali = V.FKIDAnimale");
+
+            var dettagliRicovero = db.T_Ricovero.Include("T_Animali").ToList();
+
+
+
+            return View(dettagliRicovero);
+        }
+
+        */
+    }
+
+
 }

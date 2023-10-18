@@ -26,6 +26,7 @@ namespace TheLastBuildWeek.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.FKIDDitta = new SelectList(db.T_DittaFarmaceutica, "IDDitta", "Nome");
             return View();
         }
 
@@ -123,7 +124,7 @@ namespace TheLastBuildWeek.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.FKIDDitta = new SelectList(db.T_DittaFarmaceutica, "IDDitta", "Nome", t_Prodotti.FKIDDitta);
             return View(t_Prodotti);
         }
 

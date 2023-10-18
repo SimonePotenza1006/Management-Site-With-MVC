@@ -1,0 +1,34 @@
+﻿@model List<TheLastBuildWeek.Models.T_Animali>
+
+@{
+    ViewBag.Title = "AnimaliRicoverati";
+}
+
+<h2>AnimaliRicoverati</h2>
+
+<h2>_AnimaliRicoverati</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Nome</th>
+            <th>Data Visita</th>
+            <th>Esame</th>
+            <th>Descrizione</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var animRic in Model)
+        {
+            <tr>
+                <td>@animRic.NomeAnimale</td>
+                <td>@animRic.FotoAnimale</td>
+                <td>@animRic.Tipologia</td>
+                <td>@animRic.CodiceMicrochip</td>
+                <td><button id="showDetails">@Html.ActionLink("Dettagli", "DetailVisita", new { id = animRic.IDAnimale })</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

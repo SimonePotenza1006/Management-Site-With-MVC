@@ -312,6 +312,7 @@
     <Content Include="Views\T_Clienti\Details.cshtml" />
     <Content Include="Views\T_Clienti\Edit.cshtml" />
     <Content Include="Views\T_Clienti\Index.cshtml" />
+    <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
