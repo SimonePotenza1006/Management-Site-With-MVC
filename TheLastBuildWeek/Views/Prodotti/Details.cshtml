@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Details";
+    var x = ViewBag.CodFisc;
+    
 }
 
 @using (Html.BeginForm())
@@ -70,6 +72,11 @@
             <dd>
                 @Html.DisplayFor(model => model.TipoProdotto)
             </dd>
+
+            <dd>
+                @Html.TextBox("CodiceFiscale");
+            </dd>
+            
 
         </dl>
     </div>
