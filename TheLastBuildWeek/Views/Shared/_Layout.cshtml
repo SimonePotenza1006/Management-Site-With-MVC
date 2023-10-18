@@ -21,10 +21,11 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Login Amministratori", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Ricoveri", "AnimaliRicoverati", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     @if (User.IsInRole("Veterinario"))
                     {
                         <li>@Html.ActionLink("Inserisci animale", "AddAnimale", "Animali", new { area = "" }, new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Visite", "Create", "T_Ricovero",  new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Visite", "Create", "T_Ricovero", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Logout", "LogOut", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     }
                     else if (User.IsInRole("Farmacista"))
