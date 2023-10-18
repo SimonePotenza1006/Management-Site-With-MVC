@@ -20,6 +20,8 @@ namespace TheLastBuildWeek.Controllers
             public string Tipologia { get; set; }
             public string CodiceMicrochip { get; set; }
             public string Foto { get; set; }
+            public string NomeProprietario { get; set; }
+            public string CognomeProprietario { get; set; }
         }
 
         public ActionResult Index()
@@ -86,16 +88,25 @@ namespace TheLastBuildWeek.Controllers
                     Nome = animale.NomeAnimale,
                     Tipologia = animale.Tipologia,
                     CodiceMicrochip = animale.CodiceMicrochip,
-                    Foto = animale.FotoAnimale
-                });
+                    Foto = animale.FotoAnimale,
+                    NomeProprietario = animale.NomeProprietario,
+                    CognomeProprietario = animale.CognomeProprietario
+                }) ;
             return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
         }
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
         public ActionResult Ricoveri (T_Ricovero ricovero)
         {
+            var animaleNome = db.T_Animali.FirstOrDefault();
+            var foreignKeyAnimale = db.T_Ricovero.FirstOrDefault();
 
-            //DA FARE: far vedere animali 
+            if(foreignKeyAnimale == null)
+            {
+                return View(animaleNome);
+            }
+
+
             return View(db.T_Ricovero.ToList());
         }
 
@@ -106,8 +117,8 @@ namespace TheLastBuildWeek.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult AnimaleView (T_Visita visita)
+        [HttpGet]
+        public ActionResult DetailVisita (T_Visita visita)
         {
             var animaleRicoverato = db.T_Animali.FirstOrDefault();
             var idAnimaleRicoverato = db.T_Ricovero.FirstOrDefault();

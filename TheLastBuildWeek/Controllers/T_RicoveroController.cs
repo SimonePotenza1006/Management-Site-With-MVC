@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -127,6 +129,33 @@ namespace TheLastBuildWeek.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private class animaliRicoverati
+        {
+            public int ID { get; set; }
+
+            public string nomeAnimale { get; set; }
+
+            public string tipologia { get; set; }
+
+            public string fotoAnimale { get; set; }
+
+            public string nomeProprietario { get; set; }
+
+            public string cognomeProprietario { get; set; }
+
+
+        }
+        public ActionResult SomeAction(string id)
+        {
+            animaliRicoverati aricover = new animaliRicoverati();
+                 
+            SqlCommand sqlCommand = new SqlCommand("select * from T_Animali as A inner join T_Visite as V on A.IDAnimali = V.FKIDAnimale");
+
+
+
+            return View();
         }
     }
 }
