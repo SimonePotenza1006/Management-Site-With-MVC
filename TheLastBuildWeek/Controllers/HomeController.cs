@@ -129,12 +129,13 @@ namespace TheLastBuildWeek.Controllers
         }
 
         [HttpGet]
-        public ActionResult AnimaliRicoverati(T_Animali animali)
+        public ActionResult AnimaliRicoverati()
         {
-            var dettagliRicovero = db.T_Animali.Include("T_Ricovero").ToList();
+            
+            var animaliRicoverati = db.T_Animali.Where(a => a.T_Ricovero.Any()).ToList();
 
-
-            return View(db.T_Animali.ToList());
+            return View(animaliRicoverati);
         }
+
     }
 }
