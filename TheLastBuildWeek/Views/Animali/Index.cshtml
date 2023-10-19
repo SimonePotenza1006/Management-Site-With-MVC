@@ -33,12 +33,12 @@
                             @if (User.IsInRole("Veterinario"))
                             {
 
-                                <div> <a @Html.ActionLink("Modifica", "EditAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-warning" }) </div>
-                                <div> <a @Html.ActionLink("Elimina", "CancelAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
+                                <div>  @Html.ActionLink("Modifica", "EditAnimale", new { @id = item.IDAnimale }, new { @class = "btn btn-warning" }) </div>
+                                <div>  @Html.ActionLink("Elimina", "CancelAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
                             }
                             else
                             {
-                        <div> <a @Html.ActionLink("Più info", "DetailsAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
+                        <div> @Html.ActionLink("Più info", "DetailsAnimal",null, new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
                             }
 
                         </div>
