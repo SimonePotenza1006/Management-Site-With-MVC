@@ -24,19 +24,24 @@
                                 <p class="card-text text-center">Codice del Microchip:@Html.DisplayFor(modelItem => item.CodiceMicrochip)</p>
                                 <p class="card-text text-center">Proprietario:@Html.DisplayFor(modelItem => item.CognomeProprietario) @Html.DisplayFor(modelItem => item.NomeProprietario)</p>
                             }
-                            @if(item.IsSmarrito == true)
+                            @if (item.IsSmarrito == true)
                             {
                                 <p class="card-text text-center">L'animale risulta smarrito</p>
                             }
-
-                            <div class="d-flex justify-content-evenly">
-
+                          
+                        <div class="d-flex justify-content-evenly">
+                            @if (User.IsInRole("Veterinario"))
+                            {
 
                                 <div> <a @Html.ActionLink("Modifica", "EditAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-warning" }) </div>
                                 <div> <a @Html.ActionLink("Elimina", "CancelAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
+                            }
+                            else
+                            {
+                        <div> <a @Html.ActionLink("Più info", "DetailsAnimal", new { @id = item.IDAnimale }, new { @class = "btn btn-danger" }) </div>
+                            }
 
-
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -45,7 +50,4 @@
     }
 </div>
 
-<p>
-    @Html.ActionLink("Aggiungi un animale", "AddAnimale")
-</p>
 

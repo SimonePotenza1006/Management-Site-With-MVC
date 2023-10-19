@@ -13,7 +13,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<h2>Create</h2>
+<h2>Crea un ricovero</h2>
 
 @using (Html.BeginForm())
 {
@@ -21,7 +21,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="container d-flex justify-content-center text-center">
-        <div class="card px-5 py-5">
+        <div class="card px-5 py-5 bg-body">
             <h1>Inserisci un ricovero</h1>
             <span>Per inserire un ricovero specifica il motivo del ricovero stesso, la data prevista del ricovero ed il nome dell'animale.</span>
            
