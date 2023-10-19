@@ -14,7 +14,15 @@ namespace TheLastBuildWeek.Controllers
     public class ProdottiController : Controller
 
     {
-        private ModelDBContext db = new ModelDBContext();   
+        private ModelDBContext db = new ModelDBContext();
+
+        private class Prodotto
+        {
+            public string Nome { get; set; }
+            public string Descrizione { get; set; }
+            public int Armadietto { get; set; }
+            public int Cassetto { get; set; }
+        }
 
         // GET: Prodotti
         public ActionResult Index()
@@ -148,6 +156,22 @@ namespace TheLastBuildWeek.Controllers
             db.T_Prodotti.Remove(t_Prodotti);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+
+        public ActionResult GetProdotti (string nome)
+        {
+            List<Prodotto> ProdottoList = new List<Prodotto>();
+
+            foreach (T_Prodotti prodotto in db.T_Prodotti.ToList())
+                ProdottoList.Add(new Prodotto
+                {
+                    Nome = prodotto.NomeProdotto,
+                    Descrizione = prodotto.Descrizione,
+                    Armadietto = prodotto.NumArmadietto,
+                    Cassetto = prodotto.NumCassetto
+                }) ;
+            return Json(ProdottoList.Where(p => p.Nome == nome), JsonRequestBehavior.AllowGet);
         }
     }
 }

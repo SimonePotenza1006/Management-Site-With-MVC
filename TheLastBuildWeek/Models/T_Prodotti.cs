@@ -13,25 +13,25 @@ namespace TheLastBuildWeek.Models
         {
             T_Vendita = new HashSet<T_Vendita>();
         }
-
+        [Display(Name = "Codice Identificativo")]
         [Key]
         public int IDProdotto { get; set; }
-
+        [Display(Name =" Prodotto:")]
         [Required]
         [StringLength(20)]
         public string NomeProdotto { get; set; }
-
+        [Display(Name ="Ditta Farmaceutica: ")]
         public int FKIDDitta { get; set; }
-
+        [Display(Name =" Prezzo")]
         [Column(TypeName = "money")]
         public decimal? Prezzo { get; set; }
-
+        [Display(Name ="Descrizione:")]
         [Required]
         [StringLength(30)]
         public string Descrizione { get; set; }
-
+        [Display(Name ="Armadietto: ")]
         public int NumArmadietto { get; set; }
-
+        [Display(Name ="Cassetto: ")]
         public int NumCassetto { get; set; }
 
         [Required]
