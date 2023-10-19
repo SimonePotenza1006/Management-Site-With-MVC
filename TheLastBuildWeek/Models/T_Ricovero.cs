@@ -9,16 +9,19 @@ namespace TheLastBuildWeek.Models
     public partial class T_Ricovero
     {
         [Key]
+        
         public int IDRicovero { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Data prevista Ricovero")]
         public DateTime DataRicovero { get; set; }
 
         [Required]
         [StringLength(30)]
+   
         public string DescrizioneRicovero { get; set; }
-
-        public int FKIDAnimale { get; set; }
+        [Display(Name = "Nome dell'animale")]
+        public int  FKIDAnimale { get; set; }
 
         public virtual T_Animali T_Animali { get; set; }
     }

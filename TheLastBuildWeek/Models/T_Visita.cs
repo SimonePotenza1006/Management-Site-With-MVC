@@ -21,7 +21,7 @@ namespace TheLastBuildWeek.Models
         [Required]
         [StringLength(50)]
         public string Descrizione { get; set; }
-
+        [Display(Name = "Nome dell'animale")]
         public int FKIDAnimale { get; set; }
 
         public virtual T_Animali T_Animali { get; set; }
