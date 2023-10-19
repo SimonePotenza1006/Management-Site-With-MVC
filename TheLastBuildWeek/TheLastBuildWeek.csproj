@@ -209,12 +209,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Css\Login.css" />
+    <Content Include="Content\Css\Ricoverocreate.css" />
     <Content Include="Content\Css\StileVeterinario.css" />
+    <Content Include="Content\Dittacreate.css" />
     <Content Include="Content\images\1661424858595.jpg" />
     <Content Include="Content\images\cane_capp.jpg" />
     <Content Include="Content\images\condividere-immagini-cani-social.jpg" />
     <Content Include="Content\images\Gatto_europeo4.jpg" />
     <Content Include="Content\images\LOGO.JPG" />
+    <Content Include="Content\images\Magnus.jpg" />
     <Content Include="Content\images\pastoretedesco-jpg-43868.660x368.jpg" />
     <Content Include="Content\images\Rex.jpg" />
     <Content Include="favicon.ico" />
@@ -272,6 +275,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\RicoveriCreate.js" />
     <Content Include="Scripts\ScriptSearchByMicrochip.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
