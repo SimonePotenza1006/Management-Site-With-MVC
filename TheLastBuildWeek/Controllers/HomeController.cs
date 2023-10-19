@@ -146,7 +146,7 @@ namespace TheLastBuildWeek.Controllers
                 .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Cane")
                 .ToList();
 
-            return View(caniRicoverati);
+            return PartialView("_CaniRicoverati", caniRicoverati);
         }
 
 
