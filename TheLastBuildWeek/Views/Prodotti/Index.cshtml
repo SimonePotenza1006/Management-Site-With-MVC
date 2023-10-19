@@ -15,7 +15,7 @@
     <button id="SearchButton">Ricerca</button>
 </div>
 
-<div id="result">
+<div id="result" class="bg-light">
     
 </div>
 
@@ -88,8 +88,9 @@
                     success: function (data) {
                         console.log(data)
                         $.each(data, function (i, item) {
-                            let div = "<div> <p> Nome:" + item.NOME + "</p>" +
-                                "<p> Armadietto:" + item.Artmadietto + "</p>" +
+                            let div = "<div> <p> Nome:" + item.Nome + "</p>" +
+                                "<p> Descrizione: " + item.Descrizione + "</p>"+
+                                "<p> Armadietto:" + item.Armadietto + "</p>" +
                                 "<p> Cassetto:" + item.Cassetto + "</p>" +
                                 "</div>"
                             $("#result").append(div)
