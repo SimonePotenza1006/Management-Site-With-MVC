@@ -49,3 +49,51 @@
 }
 
 </table>
+
+<div>
+    <input id="input-data" type="date" />
+    <button id="mostra-vendite">Filtra</button>
+
+</div>
+
+<div id="vendite-result">
+
+</div>
+
+@section scripts{
+    
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#mostra-vendite").click(function () {
+                var newDate = $("#input-data").val();
+                $("#vendite-result").empty();
+
+                $.ajax({
+                    method: "GET",
+                    url: "GetVenditeByDate",
+                    data: { date: newDate },
+                    success: function (data) {
+                        console.log(data);
+                        $.each(data, function (i, item) {
+                            let div = ` <div class="card" style="width: 18rem;"> ` +
+                                `<div class="card-body">` +
+                                `<h6 class="card-title"> Codice della vendita: ` + item.Id + `</h6>` +
+                                `<p class="card-text"> Data della vendita: ` + item.DataVendita + `</p>` +
+                                `</div>` + 
+                                `</div>`
+                            $("#vendite-result").append(div);
+
+
+                            
+                            
+                        })
+                    }
+                });
+            });
+            
+        });
+
+    </script>
+    
+    }

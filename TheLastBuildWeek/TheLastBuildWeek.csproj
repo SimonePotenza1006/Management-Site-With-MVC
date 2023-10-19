@@ -165,9 +165,11 @@
     <Compile Include="Controllers\FARMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\T_ClientiController.cs" />
     <Compile Include="Controllers\VenditaController.cs" />
     <Compile Include="Controllers\T_RicoveroController.cs" />
     <Compile Include="Controllers\T_VisitaController.cs" />
+    <Compile Include="Data\TheLastBuildWeekContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -206,7 +208,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\StileVeterinario.css" />
+    <Content Include="Content\images\1661424858595.jpg" />
+    <Content Include="Content\images\cane_capp.jpg" />
+    <Content Include="Content\images\condividere-immagini-cani-social.jpg" />
+    <Content Include="Content\images\Gatto_europeo4.jpg" />
+    <Content Include="Content\images\LOGO.JPG" />
+    <Content Include="Content\images\pastoretedesco-jpg-43868.660x368.jpg" />
+    <Content Include="Content\images\Rex.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -306,11 +316,15 @@
     <Content Include="Views\Home\AnimaleView.cshtml" />
     <Content Include="Views\FARM\Index.cshtml" />
     <Content Include="Views\Home\DetailVisita.cshtml" />
+    <Content Include="Views\T_Clienti\Create.cshtml" />
+    <Content Include="Views\T_Clienti\Delete.cshtml" />
+    <Content Include="Views\T_Clienti\Details.cshtml" />
+    <Content Include="Views\T_Clienti\Edit.cshtml" />
+    <Content Include="Views\T_Clienti\Index.cshtml" />
     <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
