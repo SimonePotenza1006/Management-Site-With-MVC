@@ -10,35 +10,48 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-            @*@Html.DisplayNameFor(model => model.NomeProdotto)
-        
-            @Html.DisplayNameFor(model => model.FKIDDitta)
-        
-            @Html.DisplayNameFor(model => model.Prezzo)
-        
-            @Html.DisplayNameFor(model => model.Descrizione)
-       
-            @Html.DisplayNameFor(model => model.TipoProdotto)*@
+<div>
+    <input type="text" id="SearchBox" placeholder="Inserisci un prodotto da ricercare" />
+    <button id="SearchButton">Ricerca</button>
+</div>
+
+<div id="result">
     
-
-    @foreach (var item in Model)
-    {
-       
+</div>
 
 
 
-        <div class="card" style="width: 18rem;">
-            
-            <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.NomeProdotto) </h5>
-                <p>@Html.DisplayFor(modelItem => item.FKIDDitta)</p>
-                <p>@Html.DisplayFor(modelItem => item.TipoProdotto)</p>
-                <p class="card-text">@Html.DisplayFor(modelItem => item.Descrizione)</p>
-                
+
+
+@*@Html.DisplayNameFor(model => model.NomeProdotto)
+
+    @Html.DisplayNameFor(model => model.FKIDDitta)
+
+    @Html.DisplayNameFor(model => model.Prezzo)
+
+    @Html.DisplayNameFor(model => model.Descrizione)
+
+    @Html.DisplayNameFor(model => model.TipoProdotto)*@
+
+
+@foreach (var item in Model)
+{
+
+
+
+
+    <div class="card" style="width: 18rem;">
+
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.NomeProdotto) </h5>
+            <p>@Html.DisplayFor(modelItem => item.FKIDDitta)</p>
+            <p>@Html.DisplayFor(modelItem => item.TipoProdotto)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Descrizione)</p>
+
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <h4>@Html.DisplayFor(modelItem => item.Prezzo) Euro</h4>
-                    
+
                 </li>
                 <li class="list-group-item">
                     <h4>@Html.DisplayNameFor(model => model.NumArmadietto)</h4>
@@ -51,12 +64,40 @@
             </ul>
             <div class="card-body">
                 @Html.ActionLink("Edit", "Edit", new { id = item.IDProdotto }) |
-                |@Html.ActionLink("Acquista", "Details", new { id = item.IDProdotto, @class="btn-primary"})
+                |@Html.ActionLink("Acquista", "Details", new { id = item.IDProdotto, @class = "btn-primary" })
                 @Html.ActionLink("Delete", "Delete", new { id = item.IDProdotto })
-                 
+
             </div>
         </div>
-      </div>
-    }
+    </div>
+}
 
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#SearchButton").click(function () {
+                var NomeProdotto = $('#SearchBox').val()
+                $("#result").empty()
+
+                $.ajax({
+                    method: "GET",
+                    url: "GetProdotti",
+                    data: { nome: NomeProdotto },
+                    success: function (data) {
+                        console.log(data)
+                        $.each(data, function (i, item) {
+                            let div = "<div> <p> Nome:" + item.NOME + "</p>" +
+                                "<p> Armadietto:" + item.Artmadietto + "</p>" +
+                                "<p> Cassetto:" + item.Cassetto + "</p>" +
+                                "</div>"
+                            $("#result").append(div)
+                        })
+                    }
+                })
+            })
+        })    
+    </script>
+    }
 
