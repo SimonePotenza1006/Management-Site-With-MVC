@@ -137,5 +137,61 @@ namespace TheLastBuildWeek.Controllers
             return View(animaliRicoverati);
         }
 
+        // ----------------------- PARTIAL VIEWS PER TIPOLOGIA -------------------
+
+        [HttpGet]
+        public ActionResult CaniRicoverati()
+        {
+            var caniRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Cane")
+                .ToList();
+
+            return View(caniRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult GattiRicoverati()
+        {
+            var gattiRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Gatto")
+                .ToList();
+
+            return View(gattiRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult VolatiliRicoverati()
+        {
+            var volatiliRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Volatile")
+                .ToList();
+
+            return View(volatiliRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult RettiliRicoverati()
+        {
+            var rettiliRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Rettile")
+                .ToList();
+
+            return View(rettiliRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult RoditoriRicoverati()
+        {
+            var roditoriRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Roditore")
+                .ToList();
+
+            return View(roditoriRicoverati);
+        }
+
     }
 }
