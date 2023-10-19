@@ -124,7 +124,7 @@
 
 
     @* Script di Simone per Vendite by Data *@
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $("#mostra-vendite").click(function () {
                 var newDate = $("#input-data").val();
@@ -164,7 +164,7 @@
             $("#SearchButton").click(function () {
                 var NewCode = $('#codeInput').val()
                 var ID = $('#idAnimale').val()
-                $("#result").empty()
+                //$("#result").empty()
 
                 $.ajax({
                     method: "GET",
@@ -172,17 +172,24 @@
                     data: { code: NewCode },
                     success: function (data) {
                         console.log(data)
+
                         $.each(data, function (i, item) {
-                            let div = "<div class='card' style='width: 18rem;'>" +
-                                "<img class='cart-img-top' src='/Content/images/" + item.Foto + "'/>" +
-                                "<div class='card-body'>" +
-                                "<h6 class='card-title'> Nome:" + item.Nome + "</h6>" +
-                                "<p class='d-none' id='idAnimale'>" + item.Id + "</p>" +
-                                "<p class='card-text'> Nome del Proprietario:" + item.NomeProprietario + "</p>" +
-                                "<p class='card-text'> Cognome del Proprietario:" + item.CognomeProprietario + "</p>" +
-                                "</div>" +
-                                "</div>"
-                            $("#result").append(div)
+                            if (item.CodiceMicrochip == NewCode) {
+                                let div = "<div class='card' style='width: 18rem;'>" +
+                                    "<img class='cart-img-top' src='/Content/images/" + item.Foto + "'/>" +
+                                    "<div class='card-body'>" +
+                                    "<h6 class='card-title'> Nome:" + item.Nome + "</h6>" +
+                                    "<p class='d-none' id='idAnimale'>" + item.Id + "</p>" +
+                                    "<p class='card-text'> Nome del Proprietario:" + item.NomeProprietario + "</p>" +
+                                    "<p class='card-text'> Cognome del Proprietario:" + item.CognomeProprietario + "</p>" +
+                                    "</div>" +
+                                    "</div>"
+                                $("#result").append(div)
+
+                            }
+                               
+                            
+                            
                         })
                     }
                 })

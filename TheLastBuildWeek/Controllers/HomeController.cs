@@ -78,7 +78,7 @@ namespace TheLastBuildWeek.Controllers
             return View();
         }
 
-        public ActionResult GetByChipCode(string code)
+        public ActionResult GetByChipCode()
         {
             List<Animale> animaleList = new List<Animale>();
 
@@ -96,7 +96,7 @@ namespace TheLastBuildWeek.Controllers
                     CognomeProprietario = animale.CognomeProprietario,
                 }) ;
             
-            return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
+            return Json(animaleList.ToList(), JsonRequestBehavior.AllowGet);
         }
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
