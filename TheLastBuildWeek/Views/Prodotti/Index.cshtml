@@ -9,61 +9,54 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeProdotto)
-        </th>
-        <th>
+
+            @*@Html.DisplayNameFor(model => model.NomeProdotto)
+        
             @Html.DisplayNameFor(model => model.FKIDDitta)
-        </th>
-        <th>
+        
             @Html.DisplayNameFor(model => model.Prezzo)
-        </th>
-        <th>
+        
             @Html.DisplayNameFor(model => model.Descrizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumArmadietto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumCassetto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoProdotto)
-        </th>
-        <th></th>
-    </tr>
+       
+            @Html.DisplayNameFor(model => model.TipoProdotto)*@
+    
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeProdotto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FKIDDitta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prezzo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descrizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumArmadietto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumCassetto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoProdotto)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDProdotto }) |
-            @Html.ActionLink("acquista", "Details", new { id=item.IDProdotto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDProdotto })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+       
 
-</table>
+
+
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.NomeProdotto) </h5>
+                <p>@Html.DisplayFor(modelItem => item.FKIDDitta)</p>
+                <p>@Html.DisplayFor(modelItem => item.TipoProdotto)</p>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Descrizione)</p>
+                
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h4>@Html.DisplayFor(modelItem => item.Prezzo) Euro</h4>
+                    
+                </li>
+                <li class="list-group-item">
+                    <h4>@Html.DisplayNameFor(model => model.NumArmadietto)</h4>
+                    <p>@Html.DisplayFor(modelItem => item.NumArmadietto)</p>
+                </li>
+                <li class="list-group-item">
+                    <h4>@Html.DisplayNameFor(model => model.NumCassetto)</h4>
+                    <p>@Html.DisplayFor(modelItem => item.NumCassetto)</p>
+                </li>
+            </ul>
+            <div class="card-body">
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDProdotto }) |
+                |@Html.ActionLink("Acquista", "Details", new { id = item.IDProdotto, @class="btn-primary"})
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDProdotto })
+                 
+            </div>
+        </div>
+      </div>
+    }
+
+
