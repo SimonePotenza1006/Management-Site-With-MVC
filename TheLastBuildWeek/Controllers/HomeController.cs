@@ -157,7 +157,7 @@ namespace TheLastBuildWeek.Controllers
                 .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Gatto")
                 .ToList();
 
-            return View(gattiRicoverati);
+            return PartialView("_GattiRicoverati", gattiRicoverati);
         }
 
 
@@ -168,7 +168,7 @@ namespace TheLastBuildWeek.Controllers
                 .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Volatile")
                 .ToList();
 
-            return View(volatiliRicoverati);
+            return PartialView("_VolatiliRicoverati", volatiliRicoverati);
         }
 
 
@@ -179,7 +179,7 @@ namespace TheLastBuildWeek.Controllers
                 .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Rettile")
                 .ToList();
 
-            return View(rettiliRicoverati);
+            return PartialView("_RettiliRicoverati", rettiliRicoverati);
         }
 
 
@@ -190,7 +190,7 @@ namespace TheLastBuildWeek.Controllers
                 .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Roditore")
                 .ToList();
 
-            return View(roditoriRicoverati);
+            return PartialView("_RoditoriRicoverati",roditoriRicoverati);
         }
 
     }

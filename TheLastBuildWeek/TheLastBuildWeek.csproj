@@ -325,6 +325,10 @@
     <Content Include="Views\T_Clienti\Index.cshtml" />
     <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
     <Content Include="Views\Home\_CaniRicoverati.cshtml" />
+    <Content Include="Views\Home\_GattiRicoverati.cshtml" />
+    <Content Include="Views\Home\_VolatiliRicoverati.cshtml" />
+    <Content Include="Views\Home\_RettiliRicoverati.cshtml" />
+    <Content Include="Views\Home\_RoditoriRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
