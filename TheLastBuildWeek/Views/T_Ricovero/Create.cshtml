@@ -22,15 +22,15 @@
 
     <div class="container d-flex justify-content-center text-center">
         <div class="card px-5 py-5 mt-5 " style="background-color: rgb( 9,35,35) !important">
-            <h1>Inserisci un ricovero</h1>
-            <span>Per inserire un ricovero specifica il motivo del ricovero stesso, la data prevista del ricovero ed il nome dell'animale.</span>
+            <h1 class="text-light">Inserisci un ricovero</h1>
+            <span class="text-success">Per inserire un ricovero specifica il motivo del ricovero stesso, la data prevista del ricovero ed il nome dell'animale.</span>
            
-            @Html.LabelFor(model => model.FKIDAnimale, "FKIDAnimale", htmlAttributes: new { @class = "control-label col-md-2" }) 
+            @Html.LabelFor(model => model.FKIDAnimale, "FKIDAnimale", htmlAttributes: new { @class = "control-label col-md-2 text-light" }) 
             @Html.DropDownList("FKIDAnimale", null, htmlAttributes: new { @class = "form-control" })
-@Html.ValidationMessageFor(model => model.FKIDAnimale, "", new { @class = "text-danger" }) @Html.LabelFor(model => model.DescrizioneRicovero, htmlAttributes: new { @class = "control-label col-md-2" })
+@Html.ValidationMessageFor(model => model.FKIDAnimale, "", new { @class = "text-danger" }) @Html.LabelFor(model => model.DescrizioneRicovero, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
             <input type="text" class="form-control" placeholder="Motivo del ricovero" @Html.EditorFor(model => model.DescrizioneRicovero, new { htmlAttributes = new { @class = "form-control" } })
                    @Html.ValidationMessageFor(model => model.DescrizioneRicovero, "", new { @class = "text-danger" }) 
-           @Html.LabelFor(model => model.DataRicovero, htmlAttributes: new { @class = "control-label col-md-2" })
+           @Html.LabelFor(model => model.DataRicovero, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
             <input id="date" type="date" class="form-control" placeholder="Data prevista Ricovero" @Html.EditorFor(model => model.DataRicovero, new { htmlAttributes = new { @class = "form-control" } })
           @Html.ValidationMessageFor(model => model.DataRicovero, "", new { @class = "text-danger" })  
             <button class="btn btn-success mt-5" >
