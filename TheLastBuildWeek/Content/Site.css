@@ -1,5 +1,11 @@
-﻿body {
-    background-color: #258b88;
+﻿
+html {
+    background-color: rgb( 9,35,35) !important;
+}
+
+body {
+  
+    background-color: rgb( 9,35,35) !important;
 }
 
 
@@ -50,12 +56,10 @@ textarea {
 }
 
 .background {
-    background-color:#258b88;
+    background-color: rgb( 9,35,35) !important;
 }
 
-main{
-    height:100vh;
-}
+
 
 .title {
     font-family: Cambria;
@@ -72,5 +76,10 @@ main{
 
 
 .colore {
+    background-color: #258b88 !important;
+}
+
+nav {
+    background-color: #258b88 !important;
     background-color: #258b88 !important;
 }

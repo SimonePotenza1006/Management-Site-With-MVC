@@ -275,7 +275,6 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\RicoveriCreate.js" />
     <Content Include="Scripts\ScriptSearchByMicrochip.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -317,7 +316,6 @@
     <Content Include="Views\T_Visita\Details.cshtml" />
     <Content Include="Views\T_Visita\Edit.cshtml" />
     <Content Include="Views\T_Visita\Index.cshtml" />
-    <Content Include="Views\Home\AnimaleView.cshtml" />
     <Content Include="Views\FARM\Index.cshtml" />
     <Content Include="Views\Home\DetailVisita.cshtml" />
     <Content Include="Views\T_Clienti\Create.cshtml" />
@@ -326,6 +324,11 @@
     <Content Include="Views\T_Clienti\Edit.cshtml" />
     <Content Include="Views\T_Clienti\Index.cshtml" />
     <Content Include="Views\Home\AnimaliRicoverati.cshtml" />
+    <Content Include="Views\Home\_CaniRicoverati.cshtml" />
+    <Content Include="Views\Home\_GattiRicoverati.cshtml" />
+    <Content Include="Views\Home\_VolatiliRicoverati.cshtml" />
+    <Content Include="Views\Home\_RettiliRicoverati.cshtml" />
+    <Content Include="Views\Home\_RoditoriRicoverati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

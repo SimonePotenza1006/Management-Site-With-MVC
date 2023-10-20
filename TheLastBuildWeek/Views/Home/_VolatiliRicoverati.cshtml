@@ -1,0 +1,28 @@
+﻿@model  List<TheLastBuildWeek.Models.T_Animali>
+
+@{
+    ViewBag.Title = "VolatiliRicoverati";
+}
+
+<h3 class="text-light">Volatili Ricoverati: </h3>
+
+<div class="mt-5">
+    @foreach (var animRic in Model)
+    {
+        <div class="card p-3 pb-1 rounded bg-body-secondary" style="width: 16rem;">
+            <img src="~/Content/images/@Html.DisplayFor(modelItem => animRic.FotoAnimale)" class="" alt="Rex - German Shepard">
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-body-secondary"><span class="fw-bold">Nome: </span>@animRic.NomeAnimale</li>
+                <li class="list-group-item bg-body-secondary"><span class="fw-bold">Tipo: </span>@animRic.Tipologia</li>
+                <li class="list-group-item bg-body-secondary"><span class="fw-bold">Colore: </span>@animRic.Colore</li>
+                <li class="list-group-item bg-body-secondary"><span class="fw-bold">Microchip: </span>@animRic.CodiceMicrochip</li>
+                <li class="list-group-item bg-body-secondary"><span class="fw-bold">Data di nascita: </span>@animRic.DataNascita</li>
+            </ul>
+            <div class="card-body d-flex justify-content-center">
+                <div>@Html.ActionLink("Visite", "DetailVisita", new { id = animRic.IDAnimale }, new { @class = "text-decoration-none text-success bg-success bg-opacity-25 p-2 border border-success rounded flex-fill" })</div>
+            </div>
+        </div>
+
+    }
+</div>

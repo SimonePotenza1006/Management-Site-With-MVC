@@ -78,7 +78,7 @@ namespace TheLastBuildWeek.Controllers
             return View();
         }
 
-        public ActionResult GetByChipCode(string code)
+        public ActionResult GetByChipCode()
         {
             List<Animale> animaleList = new List<Animale>();
 
@@ -96,7 +96,7 @@ namespace TheLastBuildWeek.Controllers
                     CognomeProprietario = animale.CognomeProprietario,
                 }) ;
             
-            return Json(animaleList.Where(a => a.CodiceMicrochip == code), JsonRequestBehavior.AllowGet);
+            return Json(animaleList.ToList(), JsonRequestBehavior.AllowGet);
         }
         /////////////////////////////////////////////// ACTION PER VIEW RICOVERI ///////////////////////////
         [HttpGet]
@@ -135,6 +135,62 @@ namespace TheLastBuildWeek.Controllers
             var animaliRicoverati = db.T_Animali.Where(a => a.T_Ricovero.Any()).ToList();
 
             return View(animaliRicoverati);
+        }
+
+        // ----------------------- PARTIAL VIEWS PER TIPOLOGIA -------------------
+
+        [HttpGet]
+        public ActionResult CaniRicoverati()
+        {
+            var caniRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Cane")
+                .ToList();
+
+            return PartialView("_CaniRicoverati", caniRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult GattiRicoverati()
+        {
+            var gattiRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Gatto")
+                .ToList();
+
+            return PartialView("_GattiRicoverati", gattiRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult VolatiliRicoverati()
+        {
+            var volatiliRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Volatile")
+                .ToList();
+
+            return PartialView("_VolatiliRicoverati", volatiliRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult RettiliRicoverati()
+        {
+            var rettiliRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Rettile")
+                .ToList();
+
+            return PartialView("_RettiliRicoverati", rettiliRicoverati);
+        }
+
+
+        [HttpGet]
+        public ActionResult RoditoriRicoverati()
+        {
+            var roditoriRicoverati = db.T_Animali
+                .Where(x => x.T_Ricovero.Any() && x.Tipologia == "Roditore")
+                .ToList();
+
+            return PartialView("_RoditoriRicoverati",roditoriRicoverati);
         }
 
     }
