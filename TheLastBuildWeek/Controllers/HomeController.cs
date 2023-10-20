@@ -114,6 +114,9 @@ namespace TheLastBuildWeek.Controllers
             return View(db.T_Ricovero.ToList());
         }
 
+        /*
+         * 
+         * VECCHIO CODICE PER VEDERE LISTA VISITE, MA RITORNAVA SEMPRE LE VISITE DEL PRIMO
         [HttpGet]
         public ActionResult DetailVisita (T_Visita visita)
         {
@@ -126,6 +129,22 @@ namespace TheLastBuildWeek.Controllers
             }
 
             return View();
+        }
+        */
+
+        [HttpGet]
+        public ActionResult DetailVisita(int id)
+        {
+
+            var animaleRicoverato = db.T_Animali.FirstOrDefault(a => a.IDAnimale == id);
+
+            if (animaleRicoverato != null)
+            {
+                var listaVisite = db.T_Visita.Where(v => v.FKIDAnimale == animaleRicoverato.IDAnimale).ToList();
+                return View(listaVisite);
+            }
+
+            return View("Index");
         }
 
         [HttpGet]
