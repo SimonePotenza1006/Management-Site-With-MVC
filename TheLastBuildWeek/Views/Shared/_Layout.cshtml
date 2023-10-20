@@ -26,6 +26,7 @@
                     <li>@Html.ActionLink("Login Amministratori", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("I nostri amici", "Index", "Animali", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Tutti i Ricoveri", "AnimaliRicoverati", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Prossimamente", "Index", "Prossimamente", new { area = "" }, new { @class = "nav-link" })</li>
 
                     @if (User.IsInRole("Veterinario"))
                     {
@@ -36,7 +37,7 @@
                     else if (User.IsInRole("Farmacista"))
                     {
                         <li>@Html.ActionLink("FARMACIA", "Index", "FARM", new { area = "" }, new { @class = "nav-link" })</li>
-                     
+
                         <li>@Html.ActionLink("Ditte farmaceutiche", "Index", "Ditta", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Vendite", "Index", "Vendita", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Logout", "LogOut", "Home", new { area = "" }, new { @class = "nav-link" })</li>
