@@ -27,6 +27,10 @@ namespace TheLastBuildWeek.Controllers
         // GET: Prodotti
         public ActionResult Index()
         {
+            //List<T_DittaFarmaceutica> listaDitte = new List<T_DittaFarmaceutica>();
+            
+
+           
             return View(db.T_Prodotti.ToList());
         }
 
