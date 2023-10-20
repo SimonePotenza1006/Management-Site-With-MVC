@@ -35,7 +35,8 @@
                     }
                     else if (User.IsInRole("Farmacista"))
                     {
-                        <li>@Html.ActionLink("Prodotti", "Index", "Prodotti", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("FARMACIA", "Index", "FARM", new { area = "" }, new { @class = "nav-link" })</li>
+                     
                         <li>@Html.ActionLink("Ditte farmaceutiche", "Index", "Ditta", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Vendite", "Index", "Vendita", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Logout", "LogOut", "Home", new { area = "" }, new { @class = "nav-link" })</li>
@@ -45,11 +46,13 @@
             </div>
         </div>
     </nav>
+    <div></div>
     <div class="background">
         @RenderBody()
 
     </div>
-    <footer >
+    </div>
+    <footer>
         <div class="container-fluid colore mt-0">
             <div class="row ">
                 <div class="col col-12 text-center mt-5 ">
@@ -187,9 +190,9 @@
                                 $("#result").append(div)
 
                             }
-                               
-                            
-                            
+
+
+
                         })
                     }
                 })

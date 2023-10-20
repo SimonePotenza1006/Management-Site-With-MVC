@@ -9,6 +9,7 @@ using TheLastBuildWeek.Models;
 
 namespace TheLastBuildWeek.Controllers
 {
+    [Authorize(Roles = "Farmacista")]
     public class DittaController : Controller
     {  private ModelDBContext db = new ModelDBContext();
         // GET: Ditta
