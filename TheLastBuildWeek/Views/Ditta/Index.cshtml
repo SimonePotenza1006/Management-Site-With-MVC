@@ -3,43 +3,45 @@
 @{
     ViewBag.Title = "Index";
 }
+<div style="height: 100vh">
+    <h2>Elenco Ditte Farmaceutiche</h2>
 
-<h2>Index</h2>
+    <p>
+        @Html.ActionLink("aggiungi una Ditta", "CreateDitta")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recapito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Indirizzo)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("aggiungi una Ditta", "CreateDitta")
-</p>
-<table class="table" >
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Recapito)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Indirizzo)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recapito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Indirizzo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDDitta }) |
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Recapito)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Indirizzo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDDitta }) |
-           
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDDitta })
-        </td>
-    </tr>
-}
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDDitta })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
