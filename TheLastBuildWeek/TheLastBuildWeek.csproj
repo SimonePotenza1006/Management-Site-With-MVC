@@ -165,6 +165,7 @@
     <Compile Include="Controllers\FARMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\ProssimamenteController.cs" />
     <Compile Include="Controllers\T_ClientiController.cs" />
     <Compile Include="Controllers\VenditaController.cs" />
     <Compile Include="Controllers\T_RicoveroController.cs" />
@@ -179,6 +180,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ModelDBContext.cs" />
+    <Compile Include="Models\Prossimamente.cs" />
     <Compile Include="Models\SiteRole.cs" />
     <Compile Include="Models\T_Animali.cs" />
     <Compile Include="Models\T_Clienti.cs" />
@@ -219,6 +221,7 @@
     <Content Include="Content\images\LOGO.JPG" />
     <Content Include="Content\images\Magnus.jpg" />
     <Content Include="Content\images\pastoretedesco-jpg-43868.660x368.jpg" />
+    <Content Include="Content\images\prossimamente.jpg" />
     <Content Include="Content\images\Rex.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -329,6 +332,7 @@
     <Content Include="Views\Home\_VolatiliRicoverati.cshtml" />
     <Content Include="Views\Home\_RettiliRicoverati.cshtml" />
     <Content Include="Views\Home\_RoditoriRicoverati.cshtml" />
+    <Content Include="Views\Prossimamente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
