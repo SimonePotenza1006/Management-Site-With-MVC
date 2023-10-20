@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="text-center text-light">QUA LA ZAMPA FARMACIA</h2>
+<h2 class="text-center text-light">Farmacia Qua La Zampa</h2>
 
 <div class="text-center d-flex flex-column justify-content-center align-items-center"  >
 <div class="card mb-3 "  style="max-width: 540px;">
@@ -15,7 +15,7 @@
             <div class="card-body">
                 <h3 class="card-title"> I PRODOTTI DISPONIBILI NEL CATOLOGO</h3>
                 <p class="card-text">dai una rapida occhiata ai prodotti disponibili</p>
-                @Html.ActionLink("mostra prodotti", "Index", "Prodotti", "", new { @class = "btn btn-danger" })
+                @Html.ActionLink("mostra prodotti", "Index", "Prodotti","",  new { @class = "btn btn-danger" })
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="card-body">
                 <h3 class="card-title">INSERISCI UN NUOVO PRODOTTO</h3>
                 <p class="card-text">inserisci un nuovo prodotto all'interno del nostro catalogo' </p>
-                @Html.ActionLink("CREA prodotti", "Create", "Prodotti", "", new { @class = "btn btn-danger" })
+                @Html.ActionLink("Inserisci Prodotti", "Create", "Prodotti", "", new { @class = "btn btn-danger" })
             </div>
         </div>
     </div>

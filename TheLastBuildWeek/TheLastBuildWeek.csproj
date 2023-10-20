@@ -178,6 +178,10 @@
     <Compile Include="Migrations\202310161039341_FirstMigration.designer.cs">
       <DependentUpon>202310161039341_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310201114403_StringLenght.cs" />
+    <Compile Include="Migrations\202310201114403_StringLenght.designer.cs">
+      <DependentUpon>202310201114403_StringLenght.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prossimamente.cs" />
@@ -345,6 +349,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202310161039341_FirstMigration.resx">
       <DependentUpon>202310161039341_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310201114403_StringLenght.resx">
+      <DependentUpon>202310201114403_StringLenght.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

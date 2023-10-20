@@ -18,15 +18,15 @@ namespace TheLastBuildWeek.Models
         public int IDDitta { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Recapito { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Indirizzo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
